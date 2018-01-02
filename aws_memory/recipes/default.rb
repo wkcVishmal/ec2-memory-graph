@@ -40,5 +40,5 @@ cron 'crontab mon-put-instance-data' do
   month '*'
   weekday '*'
   user node[:aws_memory][:user]
-  command "/home/ubuntu/aws-scripts-mon/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron"
+  command "/opt/aws-scripts-mon/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron"
 end
