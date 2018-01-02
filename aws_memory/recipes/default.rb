@@ -1,5 +1,7 @@
 apt_update 'update'
 
+path_to_mon = "/opt/aws-scripts-mon"
+
 apt_package "unzip" do
   package_name "unzip"
   action "install"
@@ -23,6 +25,7 @@ execute "unzip CloudWatchMonitoringScripts" do
   command "unzip CloudWatchMonitoringScripts-1.2.1.zip -d /opt"
   cwd "/tmp"
   action :run
+  not_if { Dir.exists?(path_to_mon) }
 end
 
 template "/opt/aws-scripts-monawscreds.conf" do
