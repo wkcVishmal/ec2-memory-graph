@@ -39,7 +39,7 @@ end
 
 cron 'crontab mon-put-instance-data' do
   hour '*'
-  minute '5'
+  minute '*/5'
   month '*'
   weekday '*'
   user node[:aws_memory][:user]
